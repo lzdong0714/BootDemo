@@ -1,13 +1,13 @@
-package com.boot.demo;
+package com.unicorn.unicornmulticore;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SpringbootuseageApplication {
+public class UnicornMultiCoreApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringbootuseageApplication.class, args);
+        SpringApplication.run(UnicornMultiCoreApplication.class, args);
     }
 
 }
