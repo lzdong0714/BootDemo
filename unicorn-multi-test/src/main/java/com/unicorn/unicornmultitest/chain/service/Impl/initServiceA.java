@@ -4,6 +4,7 @@ import com.unicorn.unicornmultitest.chain.service.initService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.function.BiFunction;
 
 /**
  * @Author: Liu Zhendong
@@ -11,7 +12,7 @@ import java.util.List;
  * @createTime 2020年06月23日 11:14:00
  */
 @Service
-public class initServiceA implements initService {
+public class initServiceA implements initService , BiFunction<Integer, List<String>, String> {
 
     @Override
     public String init(int index, List<String> listStr) {
