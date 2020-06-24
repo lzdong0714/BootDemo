@@ -1,5 +1,6 @@
 package com.unicorn.unicornmultitest.chain.service.Impl;
 
+import com.unicorn.unicornmultitest.chain.enumm.Index;
 import com.unicorn.unicornmultitest.chain.service.initService;
 import org.springframework.stereotype.Service;
 
@@ -12,7 +13,7 @@ import java.util.function.BiFunction;
  * @createTime 2020年06月23日 11:18:00
  */
 @Service
-public class initServiceB implements initService, BiFunction<Integer, List<String>, String> {
+public class initServiceB implements initService {
 
 
     @Override
@@ -22,8 +23,18 @@ public class initServiceB implements initService, BiFunction<Integer, List<Strin
         return listStr.get(index);
     }
 
-    @Override
     public String apply(Integer integer, List<String> list) {
+
         return init(integer, list);
     }
+
+
+    public BiFunction<Integer, List<String>, String> getFunction(int index){
+        switch (Index.values()[index]){
+            case HIDDEN: return this::init;
+            case SHOW:   return this::apply;
+            default:     return this::init;
+        }
+    }
 }
+

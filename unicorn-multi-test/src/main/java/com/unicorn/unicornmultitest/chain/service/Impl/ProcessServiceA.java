@@ -3,6 +3,7 @@ package com.unicorn.unicornmultitest.chain.service.Impl;
 import com.unicorn.unicornmultitest.chain.annot.ModelChain;
 import com.unicorn.unicornmultitest.chain.enumm.Index;
 import com.unicorn.unicornmultitest.chain.service.initService;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
@@ -18,8 +19,8 @@ import java.util.List;
 //
 //    String init(int index, List<String> listStr);
 //}
-
-public class processServiceA {
+@Service
+public class ProcessServiceA {
 
 
 //    @ModelChain(index = Index.CHECK)
