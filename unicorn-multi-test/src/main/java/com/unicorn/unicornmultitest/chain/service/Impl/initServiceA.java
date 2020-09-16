@@ -20,7 +20,7 @@ public class initServiceA implements initService {
         return listStr.get(index);
     }
 
-    @Override
+//    @Override
     public String apply(Integer integer, List<String> list) {
         return init(integer, list);
     }

@@ -24,7 +24,7 @@ public class ChatHandler extends  SimpleChannelInboundHandler<TextWebSocketFrame
 		System.out.println("context of recived message is :" + context);
 		for(Channel channel : clients){
 			channel.writeAndFlush(new TextWebSocketFrame("[server recevied msg in time ]:" + 
-				LocalDateTime.now() + "content is " +  msg));
+				LocalDateTime.now() + "content is " +  context));
 
 		}
 	}
