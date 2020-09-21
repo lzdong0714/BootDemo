@@ -21,7 +21,7 @@ public class initServiceA implements initService , BiFunction<Integer, List<Stri
         return listStr.get(index);
     }
 
-    @Override
+//    @Override
     public String apply(Integer integer, List<String> list) {
         return init(integer, list);
     }
