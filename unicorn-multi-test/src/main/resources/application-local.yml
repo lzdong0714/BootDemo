@@ -37,3 +37,22 @@ mybatis-plus:
 
 server:
   port: 8080
+
+  rabbitmq:
+    host: 192.168.99.100
+    port: 5672
+    username: admin
+    password: admin
+    connection-timeout: 15000
+    listener:
+      simple:
+        acknowledge-mode: manual  # 不开启自动ACK模式,防止报错后未正确处理消息丢失 默认none
+        concurrency: 10
+        max-concurrency: 20
+        prefetch: 5
+    publisher-confirms: true
+    publisher-returns: true
+    template:
+      mandatory: true
+    virtual-host: /
+

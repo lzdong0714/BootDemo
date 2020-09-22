@@ -18,13 +18,31 @@ public class WSServer{
 			.channel(NioServerSocketChannel.class)
 			.childHandler(new WSServerInitializer());
 
-			ChannelFuture future = server.bind(8088).sync();
+			ChannelFuture future = server.bind(8089).sync();
 
 			future.channel().closeFuture().sync();
 		}finally{
 			mainGroup.shutdownGracefully();
 			subGroup.shutdownGracefully();
 		}
+	}
+
+	public void start() throws InterruptedException {
+		EventLoopGroup mainGroup = new NioEventLoopGroup();
+		EventLoopGroup subGroup = new NioEventLoopGroup();
+		try{
+			ServerBootstrap server = new ServerBootstrap();
+			server.group(mainGroup, subGroup)
+					.channel(NioServerSocketChannel.class)
+					.childHandler(new WSServerInitializer());
+
+			ChannelFuture future = server.bind(8088).sync();
+			future.channel().closeFuture().sync();
+		}finally{
+			mainGroup.shutdownGracefully();
+			subGroup.shutdownGracefully();
+		}
+
 	}
 
 }
